@@ -3,11 +3,11 @@
 namespace Pos\Invoice\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Invoice_details;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Pos\Category\Models\Category;
 use Pos\Invoice\Models\Invoice;
+use Pos\Invoice\Models\Invoice_details;
 use Pos\Product\Models\Product;
 use function auth;
 use function redirect;
