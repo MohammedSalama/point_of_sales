@@ -1,13 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Auth;
+namespace Pos\Admin\Requests;
 
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use function __;
+use function auth;
+use function event;
+use function trans;
 
 class LoginRequestAdmin extends FormRequest
 {

@@ -1,11 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pos\Product\Controllers;
 
-use App\Models\Product;
-use App\Models\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreProductsRequest;
+use Pos\Category\Models\Category;
+use Pos\Product\Models\Product;
+use Pos\Product\Requests\StoreProductsRequest;
+use function redirect;
+use function session;
+use function trans;
+use function view;
 
 
 class ProductController extends Controller
@@ -62,7 +67,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \Pos\Product\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function show(Product $product)
@@ -73,7 +78,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \Pos\Product\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -87,7 +92,7 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \Pos\Product\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function update(StoreProductsRequest $request, $id)
@@ -115,7 +120,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \Pos\Product\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace Pos\Category\Models;
 
 
-use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
 {

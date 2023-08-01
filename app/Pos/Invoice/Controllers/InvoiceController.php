@@ -1,13 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pos\Invoice\Controllers;
 
-use App\Models\Invoice;
-use App\Models\Category;
-use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Http\Controllers\Controller;
 use App\Models\Invoice_details;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Pos\Category\Models\Category;
+use Pos\Invoice\Models\Invoice;
+use Pos\Product\Models\Product;
+use function auth;
+use function redirect;
+use function session;
+use function trans;
+use function view;
 
 
 class InvoiceController extends Controller
@@ -79,7 +85,7 @@ class InvoiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Invoice  $invoice
+     * @param  \Pos\Invoice\Models\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
     public function show(Invoice $invoice)
@@ -90,7 +96,7 @@ class InvoiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Invoice  $invoice
+     * @param  \Pos\Invoice\Models\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -99,13 +105,13 @@ class InvoiceController extends Controller
         $categories = Category::all();
         return view('backend.invoices.edit', compact('categories', 'invoice'));
     }
-    
+
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Invoice  $invoice
+     * @param  \Pos\Invoice\Models\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -137,7 +143,7 @@ class InvoiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Invoice  $invoice
+     * @param  \Pos\Invoice\Models\Invoice  $invoice
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
