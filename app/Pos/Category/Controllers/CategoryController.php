@@ -1,10 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pos\Category\Controllers;
 
-use App\Models\Category;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreCategoriesRequest;
+use App\Http\Controllers\Controller;
+use Pos\Category\Models\Category;
+use Pos\Category\Requests\StoreCategoriesRequest;
+use function redirect;
+use function session;
+use function trans;
+use function view;
 
 class CategoryController extends Controller
 {
@@ -60,7 +64,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \Pos\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -71,7 +75,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \Pos\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function edit(Category $category)
@@ -83,7 +87,7 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \Pos\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function update(StoreCategoriesRequest $request, $id)
@@ -111,7 +115,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \Pos\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

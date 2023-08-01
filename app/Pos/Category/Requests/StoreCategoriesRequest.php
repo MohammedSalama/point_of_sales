@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Pos\Category\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use function trans;
 
 class StoreCategoriesRequest extends FormRequest
 {
